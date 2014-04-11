@@ -7,20 +7,41 @@
 #include <Relay.h>
 #include <Victor.h>
 
+#include "../input/InputMethod.h"
 #include "../RobotMap.h"
 
 ShooterSystem::ShooterSystem() {
-	// TODO Auto-generated constructor stub
 
 }
 
 ShooterSystem::~ShooterSystem() {
-	// TODO Auto-generated destructor stub
+	delete pneumatic;
+	delete motor;
 }
 
 void ShooterSystem::init(Environment* environment){
 	motor = new Victor(SHOOTER_MOTOR);
 	pneumatic = new Relay(SHOOTER_RELAY);
 	pneumatic->Set(Relay::kOff);
+}
+
+void ShooterSystem::shoot(InputMethod* input){
+	if(!isToggled && input->shoot()){
+		if(!shooting){
+
+		}
+	}
+}
+
+void ShooterSystem::open(){
+	pneumatic->Set(Relay::kForward);
+}
+
+void ShooterSystem::close(){
+	pneumatic->Set(Relay::kOff);
+}
+
+void ShooterSystem::setMotor(double speed){
+	motor->Set(speed);
 }
 
