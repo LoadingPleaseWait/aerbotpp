@@ -13,7 +13,7 @@ Aerbot::Aerbot() {
 
 Aerbot::~Aerbot() {
 	delete environment;
-	delete execurer;
+	delete executer;
 }
 
 void Aerbot::RobotInit(){
