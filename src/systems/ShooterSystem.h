@@ -11,7 +11,8 @@ class ShooterSystem: public RobotSystem {
 private:
 	Victor* motor;
 	Relay* pneumatic;
-	bool isToggled,catchToggle, shooting, shootPressed;
+	Timer timer;
+	bool isToggled,catchToggle, shooting, shootPressed, manualShooting;
 public:
 	ShooterSystem();
 	virtual ~ShooterSystem();
