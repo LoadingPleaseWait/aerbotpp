@@ -1,10 +1,3 @@
-/*
- * Executer.cpp
- *
- *  Created on: Apr 8, 2014
- *      Author: MurpheyA
- */
-
 #include "Executer.h"
 
 Executer::Executer(Environment* environment) {
