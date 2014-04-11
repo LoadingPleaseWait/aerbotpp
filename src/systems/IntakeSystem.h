@@ -18,7 +18,9 @@ public:
 	virtual ~IntakeSystem();
 	virtual void init(Environment* env);
 	virtual void intake(InputMethod* input);
-
+	virtual void setMotor(double speed);
+	virtual void open();
+	virtual void close();
 };
 
 #endif /* INTAKESYSTEM_H_ */
