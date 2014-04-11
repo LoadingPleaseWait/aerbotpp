@@ -7,7 +7,8 @@ IntakeSystem::IntakeSystem() {
 }
 
 IntakeSystem::~IntakeSystem() {
-
+	delete motor;
+	delete lift;
 }
 
 void IntakeSystem::init(Environment* env){

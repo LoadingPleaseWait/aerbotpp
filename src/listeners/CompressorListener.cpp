@@ -16,7 +16,7 @@ CompressorListener::CompressorListener() {
 }
 
 CompressorListener::~CompressorListener() {
-
+	delete compressor;
 }
 
 void CompressorListener::init(Environment environment){
