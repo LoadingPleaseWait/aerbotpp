@@ -7,6 +7,9 @@
 
 #include "IntakeListener.h"
 
+#include "../Environment.h"
+#include "../systems/IntakeSystem.h"
+
 IntakeListener::IntakeListener() {
 
 }
@@ -24,6 +27,6 @@ bool IntakeListener::shouldExecute(){
 }
 
 void IntakeListener::execute(){
-
+	environment->getIntakeSystem()->intake(environment->getInput());
 }
 

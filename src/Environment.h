@@ -1,16 +1,17 @@
 #ifndef ENVIRONMENT_H_
 #define ENVIRONMENT_H_
 
-#include <RobotBase.h>
-
-#include "input/PartnerXboxInput.h"
-#include "systems/IntakeSystem.h"
+class InputMethod;
+class IntakeSystem;
+class RobotBase;
+class ShooterSystem;
 
 class Environment {
 private:
 	RobotBase* robot;
 	InputMethod* input;
 	IntakeSystem* intake;
+	ShooterSystem* shooter;
 public:
 	Environment(RobotBase* bot);
 	Environment();
@@ -19,6 +20,7 @@ public:
 	virtual bool isOperatorControl();
 	virtual InputMethod* getInput();
 	virtual IntakeSystem* getIntakeSystem();
+	virtual ShooterSystem* getShooterSystem();
 };
 
 #endif /* ENVIRONMENT_H_ */

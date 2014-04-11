@@ -1,7 +1,3 @@
-/*
- * 
- */
-
 #ifndef SHOOTERSYSTEM_H_
 #define SHOOTERSYSTEM_H_
 

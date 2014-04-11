@@ -4,6 +4,9 @@
 
 #include "ShooterListener.h"
 
+#include "../Environment.h"
+#include "../systems/ShooterSystem.h"
+
 ShooterListener::ShooterListener() {
 	// TODO Auto-generated constructor stub
 
@@ -22,6 +25,6 @@ bool ShooterListener::shouldExecute(){
 }
 
 void ShooterListener::execute(){
-
+	environment->getShooterSystem()->shoot(environment->getInput());
 }
 

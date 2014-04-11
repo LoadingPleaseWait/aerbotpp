@@ -1,5 +1,11 @@
 #include "Environment.h"
 
+#include <RobotBase.h>
+
+#include "input/PartnerXboxInput.h"
+#include "systems/IntakeSystem.h"
+#include "systems/ShooterSystem.h"
+
 Environment::Environment(RobotBase* bot) {
 	robot = bot;
 
@@ -7,6 +13,9 @@ Environment::Environment(RobotBase* bot) {
 
 	intake = new IntakeSystem();
 	intake->init(this);
+
+	shooter = new ShooterSystem();
+	shooter->init(this);
 }
 
 Environment::~Environment() {
@@ -19,5 +28,13 @@ bool Environment::isAutonomous(){
 
 bool Environment::isOperatorControl(){
 	return robot->IsOperatorControl();
+}
+
+IntakeSystem* Environment::getIntakeSystem(){
+	return intake;
+}
+
+ShooterSystem* Environment::getShooterSystem(){
+	return shooter;
 }
 
