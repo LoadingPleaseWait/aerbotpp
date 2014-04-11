@@ -19,7 +19,8 @@ Environment::Environment(RobotBase* bot) {
 }
 
 Environment::~Environment() {
-
+	delete intake;
+	delete input;
 }
 
 bool Environment::isAutonomous(){
