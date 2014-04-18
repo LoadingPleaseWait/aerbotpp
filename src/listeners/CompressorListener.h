@@ -12,7 +12,7 @@ private:
 public:
 	CompressorListener();
 	virtual ~CompressorListener();
-	virtual void init(Environment environment);
+	virtual void init(Environment* environment);
 	virtual bool shouldExecute();
 	virtual void execute();
 };

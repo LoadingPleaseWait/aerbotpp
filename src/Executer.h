@@ -3,8 +3,7 @@
 
 #include <vector>
 
-#include "Environment.h"
-#include "listeners/CompressorListener.h"
+#include "listeners/Listener.h"
 
 using std::vector;
 

@@ -19,7 +19,7 @@ CompressorListener::~CompressorListener() {
 	delete compressor;
 }
 
-void CompressorListener::init(Environment environment){
+void CompressorListener::init(Environment* environment){
 	compressor = new Compressor(COMPRESSOR_PRESSURE, COMPRESSOR_RELAY);
 	compressor->Start();
 }
