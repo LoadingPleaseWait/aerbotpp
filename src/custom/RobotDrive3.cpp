@@ -1,5 +1,8 @@
 #include "RobotDrive3.h"
 
+#include <SpeedController.h>
+
+
 RobotDrive3::RobotDrive3(int leftMotorChannel, int rightMotorChannel) : RobotDrive(leftMotorChannel, rightMotorChannel) {
 
 }
@@ -38,6 +41,39 @@ void RobotDrive3::ArcadeDrive(double moveValue,double rotateValue){
 	}
 
 	SetLeftRightMotorOutputs(leftMotorSpeed,rightMotorSpeed);
+}
+
+void RobotDrive3::MecanumDrive(double yMovement, double xMovement, double rotation){
+	double frontLeftMotorSpeed, rearLeftMotorSpeed, frontRightMotorSpeed, rearRightMotorSpeed;
+
+	rotation = rotation * rotation * rotation;//cubed rotation
+
+	//positive xMovement results in movement to the left and vise versa
+	frontLeftMotorSpeed = rearRightMotorSpeed = -xMovement;
+	frontRightMotorSpeed = rearLeftMotorSpeed = xMovement;
+
+	//forward and back movement
+	frontLeftMotorSpeed += yMovement;
+	frontRightMotorSpeed += yMovement;
+	rearLeftMotorSpeed += yMovement;
+	rearRightMotorSpeed += yMovement;
+
+	// positive rotation results in turn to the left
+	frontLeftMotorSpeed -= rotation;
+	rearLeftMotorSpeed -= rotation;
+	frontRightMotorSpeed += rotation;
+	rearRightMotorSpeed += rotation;
+
+	//make sure motor speeds are not above 1 or below -1
+	frontLeftMotorSpeed = Limit(frontLeftMotorSpeed);
+	frontRightMotorSpeed = Limit(frontRightMotorSpeed);
+	rearLeftMotorSpeed = Limit(rearLeftMotorSpeed);
+	rearRightMotorSpeed = Limit(rearRightMotorSpeed);
+
+	m_frontLeftMotor->Set(frontLeftMotorSpeed);
+	m_frontRightMotor->Set(frontRightMotorSpeed);
+	m_rearLeftMotor->Set(rearLeftMotorSpeed);
+	m_rearRightMotor->Set(rearRightMotorSpeed);
 }
 
 double max(double number1, double number2){
