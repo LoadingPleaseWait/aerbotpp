@@ -8,7 +8,7 @@
 #include "PartnerXboxInput.h"
 
 PartnerXboxInput::PartnerXboxInput() :driver(1), shooter(2) {
-
+	//instance variables are initialized
 }
 
 PartnerXboxInput::~PartnerXboxInput() {
