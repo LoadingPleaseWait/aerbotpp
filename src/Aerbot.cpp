@@ -2,7 +2,6 @@
  * Aerbot.cpp
  *
  *  Created on: Apr 8, 2014
- *      Author: MurpheyA
  */
 
 #include "Aerbot.h"

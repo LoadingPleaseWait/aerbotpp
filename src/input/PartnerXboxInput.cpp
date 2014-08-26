@@ -2,7 +2,6 @@
  * PartnerXboxInput.cpp
  *
  *  Created on: Apr 9, 2014
- *      Author: MurpheyA
  */
 
 #include "PartnerXboxInput.h"

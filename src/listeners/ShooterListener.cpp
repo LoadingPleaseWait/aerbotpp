@@ -1,7 +1,3 @@
-/*
- * 
- */
-
 #include "ShooterListener.h"
 
 #include "../Environment.h"

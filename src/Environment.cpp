@@ -40,3 +40,7 @@ ShooterSystem* Environment::getShooterSystem(){
 	return shooter;
 }
 
+InputMethod* Environment::getInput(){
+	return input;
+}
+
