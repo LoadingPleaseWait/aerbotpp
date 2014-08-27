@@ -12,6 +12,7 @@ private:
 	InputMethod* input;
 	IntakeSystem* intake;
 	ShooterSystem* shooter;
+	WheelSystem* wheels;
 public:
 	Environment(RobotBase* bot);
 	Environment();

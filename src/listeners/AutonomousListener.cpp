@@ -1,7 +1,3 @@
-/*
- * 
- */
-
 #include "AutonomousListener.h"
 
 #include "../Environment.h"
@@ -32,11 +28,13 @@ void AutonomousListener::execute(){
 	}
 	if(timer.Get() < 2.5){
 		//drive forward
+		environment->getWheelSystem()->arcadeDrive(-1,0);
 	}else if(timer.Get() < 5.5){
 		//push forward a bit and outtake
+		environment->getWheelSystem()->arcadeDrive(.4,0);
 		environment->getIntakeSystem()->setMotor(-1);
 	}else{
-		//stop motors
+		environment->getWheelSystem()->arcadeDrive(0,0);//stop motors
 		environment->getIntakeSystem()->setMotor(0);
 	}
 }

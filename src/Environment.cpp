@@ -16,12 +16,16 @@ Environment::Environment(RobotBase* bot) {
 
 	shooter = new ShooterSystem();
 	shooter->init(this);
+
+	wheels = new WheelSystem();
+	wheels->init(this);
 }
 
 Environment::~Environment() {
 	delete intake;
 	delete input;
 	delete shooter;
+	delete wheels;
 }
 
 bool Environment::isAutonomous(){
@@ -38,6 +42,10 @@ IntakeSystem* Environment::getIntakeSystem(){
 
 ShooterSystem* Environment::getShooterSystem(){
 	return shooter;
+}
+
+ShooterSystem* Environment::getWheelSystem(){
+	return wheels;
 }
 
 InputMethod* Environment::getInput(){

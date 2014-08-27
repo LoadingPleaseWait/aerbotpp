@@ -1,7 +1,3 @@
-/*
- * 
- */
-
 #include "ShooterSystem.h"
 
 #include <Relay.h>

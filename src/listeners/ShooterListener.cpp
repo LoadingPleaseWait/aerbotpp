@@ -4,12 +4,11 @@
 #include "../systems/ShooterSystem.h"
 
 ShooterListener::ShooterListener() {
-	// TODO Auto-generated constructor stub
-
+	
 }
 
 ShooterListener::~ShooterListener() {
-	// TODO Auto-generated destructor stub
+
 }
 
 void ShooterListener::init(Environment* env){
