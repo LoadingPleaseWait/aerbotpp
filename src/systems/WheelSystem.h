@@ -11,7 +11,7 @@
 class InputMethod;
 
 class WheelSystem : public RobotSystem{
-	// TODO add instance variables and other methods
+
 public:
 	WheelSystem();
 	virtual ~WheelSystem();
@@ -34,7 +34,7 @@ public:
 protected:
 	int setGear(int gear);
 	double getCurrentLeftY();
-	void setCurretnLeftY(double currentLeftY);
+	void setCurrentLeftY(double currentLeftY);
 
 private:
 	RobotDrive3 *wheels;

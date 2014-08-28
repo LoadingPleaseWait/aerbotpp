@@ -1,18 +1,16 @@
 #include "WheelSystem.h"
 #include <SmartDashboard.h>
 
-// TODO Andrew needs to add the implementation for all the things!
-
 WheelSystem::WheelSystem() {
 
 }
 
 WheelSystem::~WheelSystem() {
-	delete wheels;
-	delete gearbox;
+	destroy();
 }
 
 void WheelSystem::init(Environment* env){
+	// initialize drive train and relay
 	wheels = new RobotDrive3(1,2);
 
 	gearbox = new Relay(2);
@@ -24,15 +22,16 @@ void WheelSystem::init(Environment* env){
 void WheelSystem::move(InputMethod* input){
 	current_left_y = -input->getLeftY();
 
-	current_ramp_y += (current_left_y - current_ramp_y) * kRamping;
+	current_ramp_y += (current_left_y - current_ramp_y) * kRamping;// ramping Y input
 
 	this->arcadeDrive(current_ramp_y * dir, input->getRightX());
 
+	// put information on the smart dashboard
 	SmartDashboard.putNumber("Gear: ", gear);
 	SmartDashboard.putBoolean("Switched Front: ", dir == -1);
 	SmartDashboard.putNumber("Ramped Movement: ", current_ramp_y);
 
-
+	// toggle between gears
 	bool shift = input->shift();
 	if(!shift){
 		gear_press = false;
@@ -49,6 +48,7 @@ void WheelSystem::move(InputMethod* input){
 		}
 	}
 
+	// toggle direction
 	if(!dir_toggle){
 		if(input->directionToggle()){
 			dir_toggle = true;
@@ -78,7 +78,9 @@ void WheelSystem::gearsReverse(){
 }
 
 void WheelSystem::destroy(){
-
+	// prepare for this object to be destroyed by destroying drive train and relay
+	delete wheels;
+	delete gearbox;
 }
 
 void WheelSystem::drive(double output_magnitude, double curve){

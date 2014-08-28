@@ -16,6 +16,7 @@ ShooterSystem::~ShooterSystem() {
 }
 
 void ShooterSystem::init(Environment* environment){
+	// initialize motor and relay
 	motor = new Victor(SHOOTER_MOTOR);
 	pneumatic = new Relay(SHOOTER_RELAY);
 	pneumatic->Set(Relay::kOff);
