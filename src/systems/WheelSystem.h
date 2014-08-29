@@ -9,7 +9,7 @@
 
 
 class WheelSystem : public RobotSystem{
-	// TODO add instance variables and other methods
+
 public:
 	WheelSystem();
 	virtual ~WheelSystem();

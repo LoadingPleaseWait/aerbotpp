@@ -16,6 +16,7 @@ Aerbot::~Aerbot() {
 }
 
 void Aerbot::RobotInit(){
+	// initialize instance variables
 	environment = new Environment(this);
 	executer = new Executer(environment);
 }
