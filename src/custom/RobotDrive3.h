@@ -2,13 +2,11 @@
  * 
  */
 
-#ifndef ROBOTDRIVE3_H_
-#define ROBOTDRIVE3_H_
+#ifndef ROBOTDRIVE3_H
+#define ROBOTDRIVE3_H
 
 #include <RobotDrive.h>
 
-double max(double,double);
-double min(double,double);
 
 class RobotDrive3: public RobotDrive {
 public:
@@ -18,4 +16,4 @@ public:
 	virtual void MecanumDrive(double yMovement, double xMovement, double rotation);
 };
 
-#endif /* ROBOTDRIVE3_H_ */
+#endif /* ROBOTDRIVE3_H */

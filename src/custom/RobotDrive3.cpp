@@ -3,6 +3,17 @@
 #include <SpeedController.h>
 
 
+
+double max(double number1, double number2){
+	return number1 > number2 ? number1 : number2;
+}
+
+double min(double number1, double number2){
+	return number1 < number2 ? number1 : number2;
+}
+
+
+
 RobotDrive3::RobotDrive3(int leftMotorChannel, int rightMotorChannel) : RobotDrive(leftMotorChannel, rightMotorChannel) {
 
 }
@@ -75,12 +86,3 @@ void RobotDrive3::MecanumDrive(double yMovement, double xMovement, double rotati
 	m_rearLeftMotor->Set(rearLeftMotorSpeed);
 	m_rearRightMotor->Set(rearRightMotorSpeed);
 }
-
-double max(double number1, double number2){
-	return number1 > number2 ? number1 : number2;
-}
-
-double min(double number1, double number2){
-	return number1 < number2 ? number1 : number2;
-}
-

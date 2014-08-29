@@ -44,7 +44,7 @@ ShooterSystem* Environment::getShooterSystem(){
 	return shooter;
 }
 
-ShooterSystem* Environment::getWheelSystem(){
+WheelSystem* Environment::getWheelSystem(){
 	return wheels;
 }
 

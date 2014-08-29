@@ -1,9 +1,9 @@
 #include "WheelSystem.h"
-#include <SmartDashboard.h>
 
-// TODO Andrew needs to add the implementation for all the things!
 
-WheelSystem::WheelSystem() {
+WheelSystem::WheelSystem()
+:gear(0), gear_press(false), dir(1), current_left_y(0), current_ramp_y(0)
+{
 
 }
 
@@ -18,7 +18,8 @@ void WheelSystem::init(Environment* env){
 	gearbox = new Relay(2);
 	this->gearsOff();
 
-	wheels->setSafetyEnabled(false);
+	wheels->SetSafetyEnabled(false);
+
 }
 
 void WheelSystem::move(InputMethod* input){
@@ -28,9 +29,9 @@ void WheelSystem::move(InputMethod* input){
 
 	this->arcadeDrive(current_ramp_y * dir, input->getRightX());
 
-	SmartDashboard.putNumber("Gear: ", gear);
-	SmartDashboard.putBoolean("Switched Front: ", dir == -1);
-	SmartDashboard.putNumber("Ramped Movement: ", current_ramp_y);
+	/*SmartDashboard::putNumber("Gear: ", gear);
+	SmartDashboard::putBoolean("Switched Front: ", dir == -1);
+	SmartDashboard::putNumber("Ramped Movement: ", current_ramp_y);*/
 
 
 	bool shift = input->shift();
@@ -64,29 +65,29 @@ int WheelSystem::getGear(){
 }
 
 int WheelSystem::setGear(int gear){
-	this->gear = gear;
+	return this->gear = gear;
 }
 
 void WheelSystem::gearsOff(){
 	gear = 0;
-	gearbox->set(Relay.value.kOff);
+	gearbox->Set(Relay::kOff);
 }
 
 void WheelSystem::gearsReverse(){
 	gear = 1;
-	gearbox->set(Relay.value.kReverse);
+	gearbox->Set(Relay::kReverse);
 }
 
 void WheelSystem::destroy(){
 
 }
 
-void WheelSystem::drive(double output_magnitude, double curve){
+/*void WheelSystem::drive(double output_magnitude, double curve){
 	wheels->drive(output_magnitude, curve);
-}
+}*/
 
 void WheelSystem::arcadeDrive(double move_value, double rotate_value){
-	wheels->arcadeDrive(move_value, rotate_value);
+	wheels->ArcadeDrive(move_value, rotate_value);
 }
 
 double WheelSystem::getCurrentLeftY(){
