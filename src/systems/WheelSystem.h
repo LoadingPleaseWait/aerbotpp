@@ -1,12 +1,12 @@
-#ifndef WHEELSYSTEM_H
-#define WHEELSYSTEM_H
+#ifndef WHEELSYSTEM_H_
+#define WHEELSYSTEM_H_
 
 #include "RobotSystem.h"
-#include "../custom/RobotDrive3.h"
-#include "../input/InputMethod.h"
 
-#include <Relay.h>
 
+class InputMethod;
+class RobotDrive3;
+class Relay;
 
 class WheelSystem : public RobotSystem{
 
@@ -19,7 +19,6 @@ public:
 	void gearsOff();
 	void gearsReverse();
 	void destroy();
-	//void drive(double output_magnitude, double curve);
 	void arcadeDrive(double move_value, double rotate_value);
 
 	static const double KShift_delay = 0.5;
@@ -45,4 +44,4 @@ private:
 
 };
 
-#endif /* WHEELSYSTEM_H */
+#endif /* WHEELSYSTEM_H_ */

@@ -9,19 +9,19 @@ private:
 public:
 	PartnerXboxInput();
 	virtual ~PartnerXboxInput();
-	virtual double getLeftX();
-	virtual double getRightX();
-	virtual double getLeftY();
-	virtual double getRightY();
-	virtual bool shift();
-	virtual bool catchBall();
-	virtual bool shoot();
-	virtual bool manualShoot();
-	virtual bool intake();
-	virtual bool outtake();
-	virtual bool intakeToggle();
-	virtual bool intakeLift();
-	virtual bool directionToggle();
+	double getLeftX();
+	double getRightX();
+	double getLeftY();
+	double getRightY();
+	bool shift();
+	bool catchBall();
+	bool shoot();
+	bool manualShoot();
+	bool intake();
+	bool outtake();
+	bool intakeToggle();
+	bool intakeLift();
+	bool directionToggle();
 };
 
 #endif /* PARTNERXBOXINPUT_H_ */

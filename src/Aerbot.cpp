@@ -1,10 +1,5 @@
-/*
- * Aerbot.cpp
- *
- *  Created on: Apr 8, 2014
- */
-
 #include "Aerbot.h"
+#include "Environment.h"
 
 Aerbot::Aerbot() {
 

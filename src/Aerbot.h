@@ -3,8 +3,9 @@
 
 #include <IterativeRobot.h>
 
-#include "Environment.h"
 #include "Executer.h"
+
+class Environment;
 
 class Aerbot : public IterativeRobot{
 private:
@@ -13,11 +14,11 @@ private:
 public:
 	Aerbot();
 	virtual ~Aerbot();
-	virtual void RobotInit();
-	virtual void AutonomousInit();
-	virtual void AutonomousPeriodic();
-	virtual void TeleopInit();
-	virtual void TeleopPeriodic();
+	void RobotInit();
+	void AutonomousInit();
+	void AutonomousPeriodic();
+	void TeleopInit();
+	void TeleopPeriodic();
 };
 
 #endif /* AERBOT_H_ */

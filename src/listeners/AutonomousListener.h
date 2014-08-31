@@ -17,9 +17,9 @@ private:
 public:
 	AutonomousListener();
 	virtual ~AutonomousListener();
-	virtual void init(Environment* env);
-	virtual bool shouldExecute();
-	virtual void execute();
+	void init(Environment* env);
+	bool shouldExecute();
+	void execute();
 };
 
 #endif /* AUTONOMOUSLISTENER_H_ */

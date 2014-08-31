@@ -6,6 +6,8 @@
 #include "listeners/ShooterListener.h"
 #include "listeners/MovementListener.h"
 
+using ::std::vector;
+
 Executer::Executer(Environment* environment) {
 	// create and initialize listeners
 	Listener* compressor = new CompressorListener();

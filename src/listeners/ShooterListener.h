@@ -11,9 +11,9 @@ private:
 public:
 	ShooterListener();
 	virtual ~ShooterListener();
-	virtual void init(Environment* env);
-	virtual bool shouldExecute();
-	virtual void execute();
+	void init(Environment* env);
+	bool shouldExecute();
+	void execute();
 };
 
 #endif /* SHOOTERLISTENER_H_ */

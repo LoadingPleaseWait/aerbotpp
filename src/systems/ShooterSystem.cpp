@@ -2,9 +2,11 @@
 
 #include <Relay.h>
 #include <Victor.h>
+#include <Jaguar.h> 
 
 #include "../input/InputMethod.h"
 #include "../RobotMap.h"
+
 
 ShooterSystem::ShooterSystem() {
 

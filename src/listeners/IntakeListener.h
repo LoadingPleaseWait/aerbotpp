@@ -9,9 +9,9 @@ private:
 public:
 	IntakeListener();
 	virtual ~IntakeListener();
-	virtual void init(Environment* env);
-	virtual bool shouldExecute();
-	virtual void execute();
+	void init(Environment* env);
+	bool shouldExecute();
+	void execute();
 };
 
 #endif /* INTAKELISTENER_H_ */

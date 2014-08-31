@@ -3,16 +3,14 @@
 
 #include <vector>
 
-#include "listeners/Listener.h"
-
-using std::vector;
+class Listener;
 
 class Executer {
 private:
-	vector<Listener*> listeners;
+	std::vector<Listener*> listeners;
 public:
 	Executer(Environment* environment);
-	~Executer();
+	virtual ~Executer();
 	void update();
 };
 

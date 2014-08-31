@@ -1,7 +1,7 @@
 #ifndef LISTENER_H_
 #define LISTENER_H_
 
-class Environment;
+#include "../Environment.h"
 
 class Listener {
 public:

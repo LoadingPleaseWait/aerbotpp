@@ -5,6 +5,7 @@
 #include "input/PartnerXboxInput.h"
 #include "systems/IntakeSystem.h"
 #include "systems/ShooterSystem.h"
+#include "systems/WheelSystem.h"
 
 Environment::Environment(RobotBase* bot) {
 	robot = bot;

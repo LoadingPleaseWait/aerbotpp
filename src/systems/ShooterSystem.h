@@ -1,9 +1,10 @@
 #ifndef SHOOTERSYSTEM_H_
 #define SHOOTERSYSTEM_H_
 
-#include <Timer.h>
 
 #include "RobotSystem.h"
+
+#include <Timer.h>
 
 class Relay;
 class Victor;

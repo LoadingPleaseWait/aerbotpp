@@ -1,9 +1,3 @@
-/*
- * IntakeListener.cpp
- *
- *  Created on: Apr 9, 2014
- */
-
 #include "IntakeListener.h"
 
 #include "../Environment.h"

@@ -1,5 +1,10 @@
 #include "WheelSystem.h"
 
+#include "../custom/RobotDrive3.h"
+#include "../input/InputMethod.h"
+
+#include <Relay.h>
+
 
 WheelSystem::WheelSystem()
 :gear(0), gear_press(false), dir(1), current_left_y(0), current_ramp_y(0)

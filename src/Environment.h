@@ -1,12 +1,11 @@
-#ifndef ENVIRONMENT_H
-#define ENVIRONMENT_H
+#ifndef ENVIRONMENT_H_
+#define ENVIRONMENT_H_
 
-#include "systems/WheelSystem.h"
-#include "systems/IntakeSystem.h"
-#include "systems/ShooterSystem.h"
-#include "input/InputMethod.h"
-
-#include <RobotBase.h>
+class RobotBase;
+class InputMethod;
+class IntakeSystem;
+class ShooterSystem;
+class WheelSystem;
 
 class Environment {
 private:
@@ -27,4 +26,4 @@ public:
 	virtual WheelSystem* getWheelSystem();
 };
 
-#endif /* ENVIRONMENT_H */
+#endif /* ENVIRONMENT_H_ */

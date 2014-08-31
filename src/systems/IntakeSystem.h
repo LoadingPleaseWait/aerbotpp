@@ -1,12 +1,12 @@
 #ifndef INTAKESYSTEM_H_
 #define INTAKESYSTEM_H_
 
-#include <Jaguar.h>
 #include <Relay.h>
 
 #include "RobotSystem.h"
 
 class InputMethod;
+class Jaguar;
 
 class IntakeSystem: public RobotSystem {
 private:
