@@ -4,6 +4,7 @@
 #include <vector>
 
 class Listener;
+class Environment;
 
 class Executer {
 private:

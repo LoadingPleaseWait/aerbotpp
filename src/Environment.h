@@ -1,11 +1,12 @@
 #ifndef ENVIRONMENT_H_
 #define ENVIRONMENT_H_
 
+#include "systems/WheelSystem.h"
+
 class RobotBase;
 class InputMethod;
 class IntakeSystem;
 class ShooterSystem;
-class WheelSystem;
 
 class Environment {
 private:

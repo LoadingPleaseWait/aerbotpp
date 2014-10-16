@@ -3,6 +3,8 @@
 #include "../input/InputMethod.h"
 #include "../RobotMap.h"
 
+#include <Jaguar.h>
+
 IntakeSystem::IntakeSystem() {
 
 }
