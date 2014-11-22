@@ -13,22 +13,21 @@ Aerbot::~Aerbot() {
 void Aerbot::RobotInit(){
 	// initialize instance variables
 	environment = new Environment(this);
-	executer = new Executer(environment);
 }
 
 void Aerbot::AutonomousInit(){
-
+	executer = new AutonomousExecuter(environment);
 }
 
 void Aerbot::AutonomousPeriodic(){
-	executer->update();
+	executer->execute();
 }
 
 void Aerbot::TeleopInit(){
-
+	executer = new TeleopExecuter(environment);
 }
 
 void Aerbot::TeleopPeriodic(){
-	executer->update();
+	executer->execute();
 }
 

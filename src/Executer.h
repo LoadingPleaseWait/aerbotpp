@@ -1,18 +1,11 @@
 #ifndef EXECUTER_H_
 #define EXECUTER_H_
 
-#include <vector>
-
-class Listener;
 class Environment;
 
-class Executer {
-private:
-	std::vector<Listener*> listeners;
+class Executer: public Initializable {
 public:
-	Executer(Environment* environment);
-	virtual ~Executer();
-	void update();
+	void execute() =0;
 };
 
 #endif /* EXECUTER_H_ */

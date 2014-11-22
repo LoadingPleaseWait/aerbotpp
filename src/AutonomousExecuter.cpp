@@ -1,27 +1,27 @@
-#include "AutonomousListener.h"
+#include "AutonomousExecuter.h"
 
-#include "../Environment.h"
-#include "../systems/IntakeSystem.h"
+#include "Environment.h"
+#include "systems/IntakeSystem.h"
 
-AutonomousListener::AutonomousListener() {
-
-}
-
-AutonomousListener::~AutonomousListener() {
+AutonomousExecuter::AutonomousExecuter() {
 
 }
 
-void AutonomousListener::init(Environment* env){
+AutonomousExecuter::AutonomousExecuter(Environment* env) {
+	init(env);
+}
+
+AutonomousExecuter::~AutonomousExecuter() {
+
+}
+
+void AutonomousExecuter::init(Environment* env){
 	environment = env;
 	started = false;
 	timer.Start();
 }
 
-bool AutonomousListener::shouldExecute(){
-	return environment->isAutonomous();
-}
-
-void AutonomousListener::execute(){
+void AutonomousExecuter::execute(){
 	if(!started){
 		timer.Reset();
 		started = true;
