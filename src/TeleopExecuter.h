@@ -1,5 +1,9 @@
+#ifndef TELEOPEXECUTER_H_
+#define TELEOPEXECUTER_H_
+
 #include <vector>
 #include "Executer.h"
+#include "systems/RobotSystem.h"
 
 class TeleopExecuter: public Executer{
 private:
@@ -8,6 +12,8 @@ public:
 	TeleopExecuter();
 	TeleopExecuter(Environment* env);
 	virtual ~TeleopExecuter();
-	void init(Environment* env);
-	void execute();
+	virtual void init(Environment* env);
+	virtual void execute();
 };
+
+#endif

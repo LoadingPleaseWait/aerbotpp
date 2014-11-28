@@ -1,7 +1,8 @@
 #include "TeleopExecuter.h"
 
-#include "Environment.h"
 #include "systems/IntakeSystem.h"
+#include "systems/WheelSystem.h"
+#include "systems/ShooterSystem.h"
 
 TeleopExecuter::TeleopExecuter() {
 
@@ -17,9 +18,9 @@ TeleopExecuter::~TeleopExecuter() {
 }
 
 void TeleopExecuter::init(Environment* env){
-	systems.push_back(env.getWheelSystem());
-	systems.push_back(env.getIntakeSystem());
-	systems.push_back(env.getShooterSystem());
+	systems.push_back(env->getWheelSystem());
+	systems.push_back(env->getIntakeSystem());
+	systems.push_back(env->getShooterSystem());
 }
 
 void TeleopExecuter::execute(){
@@ -28,3 +29,4 @@ void TeleopExecuter::execute(){
 		system->run();
 	}
 }
+

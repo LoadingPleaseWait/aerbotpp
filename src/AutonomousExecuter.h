@@ -14,8 +14,8 @@ public:
 	AutonomousExecuter();
 	AutonomousExecuter(Environment* env);
 	virtual ~AutonomousExecuter();
-	void init(Environment* env);
-	void execute();
+	virtual void init(Environment* env);
+	virtual void execute();
 };
 
 #endif /* AUTONOMOUSEXECUTER_H_ */

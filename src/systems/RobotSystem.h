@@ -1,11 +1,11 @@
 #ifndef ROBOTSYSTEM_H_
 #define ROBOTSYSTEM_H_
 
-class Environment;
+#include "../Initializable.h"
 
-class RobotSystem {
+class RobotSystem: public Initializable {
 public:
-	virtual void init(Environment*)=0;
+	virtual void run() =0;
 };
 
 #endif

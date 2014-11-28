@@ -23,6 +23,11 @@ void ShooterSystem::init(Environment* environment){
 	pneumatic = new Relay(SHOOTER_RELAY);
 	pneumatic->Set(Relay::kOff);
 	timer.Start();
+	inputMethod = environment->getInput();
+}
+
+void ShooterSystem::run(){
+	shoot(inputMethod);
 }
 
 void ShooterSystem::shoot(InputMethod* input){

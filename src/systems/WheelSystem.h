@@ -3,7 +3,6 @@
 
 #include "RobotSystem.h"
 
-
 class InputMethod;
 class RobotDrive3;
 class Relay;
@@ -14,6 +13,7 @@ public:
 	WheelSystem();
 	virtual ~WheelSystem();
 	void init(Environment* env);
+	void run();
 	void move(InputMethod* input);
 	int  getGear();
 	void gearsOff();
@@ -21,8 +21,8 @@ public:
 	void destroy();
 	void arcadeDrive(double move_value, double rotate_value);
 
-	static const double KShift_delay = 0.5;
-	static const double kShifting_speed = 1.8;
+	static const double kShiftDelay = 0.5;
+	static const double kShiftingSpeed = 1.8;
 	static const double kRamping = 0.5;
 
 protected:
@@ -32,6 +32,7 @@ protected:
 
 private:
 	RobotDrive3 *wheels;
+	InputMethod* inputMethod;
 
 	Relay* gearbox;
 	int gear; // off

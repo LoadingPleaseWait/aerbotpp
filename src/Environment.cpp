@@ -5,6 +5,8 @@
 #include "input/PartnerXboxInput.h"
 #include "systems/IntakeSystem.h"
 #include "systems/ShooterSystem.h"
+#include "systems/WheelSystem.h"
+#include "RobotMap.h"
 
 Environment::Environment(RobotBase* bot) {
 	robot = bot;
@@ -19,6 +21,9 @@ Environment::Environment(RobotBase* bot) {
 
 	wheels = new WheelSystem();
 	wheels->init(this);
+
+	compressor = new Compressor(COMPRESSOR_PRESSURE, COMPRESSOR_RELAY);
+	compressor->Start();
 }
 
 Environment::~Environment() {
@@ -50,5 +55,9 @@ WheelSystem* Environment::getWheelSystem(){
 
 InputMethod* Environment::getInput(){
 	return input;
+}
+
+Compressor* Environment::getCompressor(){
+	return compressor;
 }
 

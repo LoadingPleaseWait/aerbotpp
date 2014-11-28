@@ -17,7 +17,7 @@ WheelSystem::~WheelSystem() {
 }
 
 void WheelSystem::init(Environment* env){
-	// initialize drive train and relay
+	// initialize drive train, relay, input 
 	wheels = new RobotDrive3(1,2);
 
 	gearbox = new Relay(2);
@@ -25,6 +25,11 @@ void WheelSystem::init(Environment* env){
 
 	wheels->SetSafetyEnabled(false);
 
+	inputMethod = env->getInput();
+}
+
+void WheelSystem::run(){
+	move(inputMethod);
 }
 
 void WheelSystem::move(InputMethod* input){

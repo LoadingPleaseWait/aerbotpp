@@ -18,6 +18,11 @@ void IntakeSystem::init(Environment* env) {
 	motor = new Jaguar(INTAKE_MOTOR);
 	lift = new Relay(INTAKE_RELAY);
 	lift->Set(Relay::kReverse);
+	inputMethod = env->getInput();
+}
+
+void IntakeSystem::run(){
+	intake(inputMethod);
 }
 
 void IntakeSystem::intake(InputMethod* input) {

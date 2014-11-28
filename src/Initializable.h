@@ -1,4 +1,12 @@
+#ifndef INITIALIZABLE_H_
+#define INITIALIZABLE_H_
+
+#include "Environment.h"
+
 class Initializable{
 public:
-	void init(Environment* environment);
+	virtual void init(Environment* environment) =0;
 };
+
+#endif
+

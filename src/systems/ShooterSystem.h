@@ -14,12 +14,14 @@ class ShooterSystem: public RobotSystem {
 private:
 	Victor* motor;
 	Relay* pneumatic;
+	InputMethod* inputMethod;
 	Timer timer;
 	bool isToggled,catchToggle, shooting, shootPressed, manualShooting;
 public:
 	ShooterSystem();
 	virtual ~ShooterSystem();
 	virtual void init(Environment* environment);
+	virtual void run();
 	virtual void shoot(InputMethod* input);
 	virtual void open();
 	virtual void close();

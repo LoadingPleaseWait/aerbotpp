@@ -1,11 +1,11 @@
 #ifndef EXECUTER_H_
 #define EXECUTER_H_
 
-class Environment;
+#include "Initializable.h"
 
 class Executer: public Initializable {
 public:
-	void execute() =0;
+	virtual void execute() =0;
 };
 
 #endif /* EXECUTER_H_ */
