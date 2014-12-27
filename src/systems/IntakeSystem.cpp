@@ -59,11 +59,11 @@ void IntakeSystem::intake(InputMethod* input) {
 }
 
 void IntakeSystem::open() {
-	lift->Set(Relay::kForward);
+	lift->Set(Relay::kReverse);
 }
 
 void IntakeSystem::close() {
-	lift->Set(Relay::kReverse);
+	lift->Set(Relay::kOff);
 }
 
 void IntakeSystem::setMotor(double speed) {

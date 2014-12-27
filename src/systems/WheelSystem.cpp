@@ -2,6 +2,7 @@
 
 #include "../custom/RobotDrive3.h"
 #include "../input/InputMethod.h"
+#include "../RobotMap.h"
 
 #include <Relay.h>
 
@@ -18,7 +19,7 @@ WheelSystem::~WheelSystem() {
 
 void WheelSystem::init(Environment* env){
 	// initialize drive train, relay, input 
-	wheels = new RobotDrive3(1,2);
+	wheels = new RobotDrive3(DRIVE_LEFT_MOTOR,DRIVE_RIGHT_MOTOR);
 
 	gearbox = new Relay(2);
 	this->gearsOff();

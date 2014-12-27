@@ -8,7 +8,7 @@
 #define SHOOTER_MOTOR 4
 #define SHOOTER_RELAY 6
 #define DRIVE_LEFT_MOTOR 1
-#define DRIVE_RIGHT_MOTOR 2
+#define DRIVE_RIGHT_MOTOR 10
 #define GEARSHIFT_RELAY 2
 
 #endif /* ROBOTMAP_H_ */

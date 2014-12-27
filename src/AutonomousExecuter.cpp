@@ -29,7 +29,7 @@ void AutonomousExecuter::execute(){
 	}
 	if(timer.Get() < 2.5){
 		//drive forward
-		environment->getWheelSystem()->arcadeDrive(-1,0);
+		environment->getWheelSystem()->arcadeDrive(1,0.3);
 	}else if(timer.Get() < 5.5){
 		//push forward a bit and outtake
 		environment->getWheelSystem()->arcadeDrive(.4,0);
