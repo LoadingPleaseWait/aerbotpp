@@ -1,7 +1,3 @@
-/*
- * 
- */
-
 #ifndef ROBOTDRIVE3_H_
 #define ROBOTDRIVE3_H_
 

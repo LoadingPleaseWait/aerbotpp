@@ -19,9 +19,9 @@ ShooterSystem::~ShooterSystem() {
 
 void ShooterSystem::init(Environment* environment){
 	// initialize motor and relay
-	motor = new Victor(SHOOTER_MOTOR);
-	pneumatic = new Relay(SHOOTER_RELAY);
-	pneumatic->Set(Relay::kOff);
+	SpeedController* motors = {new Victor(SHOOTER_MOTOR_1), new Victor(SHOOTER_MOTOR_2)};
+	motor = new MultiMotor(motors);
+	pneumatic = new DoubleSolenoid(new Relay(SHOOTER_RELAY_1), new Relay(SHOOTER_RELAY_2));
 	timer.Start();
 	inputMethod = environment->getInput();
 }
@@ -78,11 +78,13 @@ void ShooterSystem::shoot(InputMethod* input){
 }
 
 void ShooterSystem::open(){
-	pneumatic->Set(Relay::kForward);
+	if(pneumatic->IsDefaultState())
+		pneumatic->toggle();
 }
 
 void ShooterSystem::close(){
-	pneumatic->Set(Relay::kOff);
+	if(!pneumatic->IsDefaultState())
+		pneumatic->toggle();
 }
 
 void ShooterSystem::setMotor(double speed){
