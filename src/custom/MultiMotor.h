@@ -6,11 +6,11 @@
 
 class MultiMotor: public SpeedController, SensorBase {
 private:
-	SpeedController* motors[];
+	SpeedController** motors;
 	int motorCount;
 
 public:
-	MultiMotor(SpeedController* speedControllers[], int length);
+	MultiMotor(SpeedController** speedControllers, int length);
 	virtual ~MultiMotor();
 	virtual void PIDWrite(float output);
 	virtual void Disable();

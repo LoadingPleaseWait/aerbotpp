@@ -11,7 +11,7 @@ DoubleSolenoid::~DoubleSolenoid(){
 
 void DoubleSolenoid::toggle(){
 	if(defaultState){
-		SetRelayValues(Relay.Value.kForward, Relay.Value.kOff);
+		SetRelayValues(Relay::Value.kForward, Relay::Value.kOff);
 	}else{
 		SetRelayValues(Relay.Value.kOff, Relay.Value.kForward);
 	}

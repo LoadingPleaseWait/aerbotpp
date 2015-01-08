@@ -1,7 +1,7 @@
 #include "MultiMotor.h"
 
-MultiMotor::MultiMotor(SpeedController* speedControllers[], int length){
-	motors = *speedControllers;
+MultiMotor::MultiMotor(SpeedController** speedControllers, int length){
+	motors = speedControllers;
 	motorCount = length;
 }
 
@@ -39,4 +39,5 @@ void MultiMotor::Free(){
 	for(int i = 0; i < motorsCount; i++){
 		delete motors[i];
 	}
+	delete[] motors;
 }

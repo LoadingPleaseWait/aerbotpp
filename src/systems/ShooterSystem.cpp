@@ -2,7 +2,7 @@
 
 #include <Relay.h>
 #include <Victor.h>
-#include <Jaguar.h> 
+#include <SpeedController.h>
 
 #include "../input/InputMethod.h"
 #include "../RobotMap.h"
@@ -19,7 +19,9 @@ ShooterSystem::~ShooterSystem() {
 
 void ShooterSystem::init(Environment* environment){
 	// initialize motor and relay
-	SpeedController* motors = {new Victor(SHOOTER_MOTOR_1), new Victor(SHOOTER_MOTOR_2)};
+	Victor** motors;
+	motors[0] = new Victor(SHOOTER_MOTOR_1);
+	motors[1] = new Victor(SHOOTER_MOTOR_2);
 	motor = new MultiMotor(motors);
 	pneumatic = new DoubleSolenoid(new Relay(SHOOTER_RELAY_1), new Relay(SHOOTER_RELAY_2));
 	timer.Start();
@@ -66,7 +68,7 @@ void ShooterSystem::shoot(InputMethod* input){
 
 	//catch and open after catch
 	if(!catchToggle && input->catchBall()){
-		if(pneumatic->Get() == Relay::kForward){
+		if(pneumatic->Get() == Relay::Value.kForward){
 			setMotor(0);
 			close();
 		}else{
@@ -79,12 +81,12 @@ void ShooterSystem::shoot(InputMethod* input){
 
 void ShooterSystem::open(){
 	if(pneumatic->IsDefaultState())
-		pneumatic->toggle();
+		pneumatic->Toggle();
 }
 
 void ShooterSystem::close(){
 	if(!pneumatic->IsDefaultState())
-		pneumatic->toggle();
+		pneumatic->Toggle();
 }
 
 void ShooterSystem::setMotor(double speed){

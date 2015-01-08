@@ -13,7 +13,7 @@ public:
 	DoubleSolenoid(Relay* firstRelay, Relay* secondRelay);
 	virtual ~DoubleSolenoid();
 	virtual void Toggle();
-	virtual void SetRelayValues(Relay.Value value1, Relay.Value value2);
+	virtual void SetRelayValues(Relay::Value value1, Relay::Value value2);
 	virtual void Free();
 	virtual bool IsDefaultState();
 
