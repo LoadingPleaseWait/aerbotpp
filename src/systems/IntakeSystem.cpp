@@ -69,4 +69,3 @@ void IntakeSystem::close() {
 void IntakeSystem::setMotor(double speed) {
 	motor->Set(speed);
 }
-

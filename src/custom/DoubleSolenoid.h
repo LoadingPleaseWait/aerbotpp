@@ -6,7 +6,8 @@
 
 class DoubleSolenoid: public SensorBase {
 private:
-	Relay* relay1, relay2;
+	Relay* relay1;
+	Relay* relay2;
 	bool defaultState;
 
 public:
@@ -18,7 +19,7 @@ public:
 	virtual bool IsDefaultState();
 
 protected:
-	virtual void SetDefaultState(bool defaultState);
+	virtual void SetDefaultState(bool state);
 };
 
 #endif /* DOUBLESOLENOID_H_ */

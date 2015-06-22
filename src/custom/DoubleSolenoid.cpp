@@ -9,29 +9,29 @@ DoubleSolenoid::~DoubleSolenoid(){
 	Free();
 }
 
-void DoubleSolenoid::toggle(){
+void DoubleSolenoid::Toggle(){
 	if(defaultState){
-		SetRelayValues(Relay::Value.kForward, Relay::Value.kOff);
+		SetRelayValues(Relay::kForward, Relay::kOff);
 	}else{
-		SetRelayValues(Relay.Value.kOff, Relay.Value.kForward);
+		SetRelayValues(Relay::kOff, Relay::kForward);
 	}
 	defaultState = !defaultState;
 }
 
-void DoubleSolenoid::SetRelayValues(Relay.Value value1, Relay.Value value2){
+void DoubleSolenoid::SetRelayValues(Relay::Value value1, Relay::Value value2){
 	relay1->Set(value1);
 	relay2->Set(value2);
 }
 
-void MultiMotor::Free(){
+void DoubleSolenoid::Free(){
 	delete relay1;
 	delete relay2;
 }
 
-bool MultiMotor::IsDefaultState(){
+bool DoubleSolenoid::IsDefaultState(){
 	return defaultState;
 }
 
-void MultiMotor::SetDefaultState(bool defaultState){
-	this.defaultState = defaultState;
+void DoubleSolenoid::SetDefaultState(bool state){
+	defaultState = state;
 }
