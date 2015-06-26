@@ -16,7 +16,7 @@ void MultiMotor::PIDWrite(float output){
 void MultiMotor::Disable(){
 	// disable motors
 	for(int i = 0; i < motorCount; i++){
-		motors[i]->disable();
+		motors[i]->Disable();
 	}
 }
 
@@ -26,8 +26,8 @@ float MultiMotor::Get(){
 }
 
 void MultiMotor::Set(float speed){
-	for(int i = 0; i < motorsCount; i++){
-		motors[i]->Set(speed)
+	for(int i = 0; i < motorCount; i++){
+		motors[i]->Set(speed);
 	}
 }
 
@@ -36,7 +36,7 @@ void MultiMotor::Set(float speed, uint8_t syncGroup){
 }
 
 void MultiMotor::Free(){
-	for(int i = 0; i < motorsCount; i++){
+	for(int i = 0; i < motorCount; i++){
 		delete motors[i];
 	}
 	delete[] motors;
