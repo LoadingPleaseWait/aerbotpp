@@ -31,7 +31,7 @@ double PartnerXboxInput::getRightY(){
 }
 
 bool PartnerXboxInput::shift(){
-	return driver.GetRawButton(BUTTON_B) || driver.GetRawButton(RIGHT_BUMPER);
+	return driver.GetRawButton(BUTTON_B);
 }
 
 bool PartnerXboxInput::catchBall(){
@@ -51,7 +51,7 @@ bool PartnerXboxInput::intakeToggle(){
 }
 
 bool PartnerXboxInput::directionToggle(){
-	 return driver.GetRawButton(BUTTON_Y) || driver.GetRawButton(RIGHT_BUMPER);
+	 return driver.GetRawButton(BUTTON_Y);
 }
 
 bool PartnerXboxInput::intake(){
@@ -61,4 +61,3 @@ bool PartnerXboxInput::intake(){
 bool PartnerXboxInput::outtake(){
 	return shooter.GetRawButton(BUTTON_X);
 }
-

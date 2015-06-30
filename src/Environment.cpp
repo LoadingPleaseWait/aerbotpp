@@ -11,7 +11,7 @@
 Environment::Environment(RobotBase* bot) {
 	robot = bot;
 
-	input = new PartnerXboxInput();
+	input = new XboxInput();
 
 	intake = new IntakeSystem();
 	intake->init(this);
@@ -60,4 +60,3 @@ InputMethod* Environment::getInput(){
 Compressor* Environment::getCompressor(){
 	return compressor;
 }
-

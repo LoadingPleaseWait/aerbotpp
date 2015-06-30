@@ -29,30 +29,29 @@ bool XboxInput::shift(){
 }
 
 bool XboxInput::catchBall(){
-	return controller.GetRawButton(BUTTON_START);
-}
-
-bool XboxInput::shoot(){
-	return controller.GetRawButton(BUTTON_A);
-}
-
-bool XboxInput::manualShoot(){
 	return controller.GetRawButton(BUTTON_Y);
 }
 
-bool XboxInput::intakeToggle(){
-	return controller.GetRawButton(BUTTON_X);
-}
-
-bool XboxInput::directionToggle(){
-	return false;
-}
-
-bool XboxInput::intake(){
+bool XboxInput::shoot(){
 	return controller.GetRawButton(LEFT_BUMPER);
 }
 
-bool XboxInput::outtake(){
+bool XboxInput::manualShoot(){
+	return controller.GetRawButton(LEFT_STICK);
+}
+
+bool XboxInput::intakeToggle(){
 	return controller.GetRawButton(RIGHT_BUMPER);
 }
 
+bool XboxInput::directionToggle(){
+	return BUTTON_BACK;
+}
+
+bool XboxInput::intake(){
+	return controller.GetRawButton(BUTTON_A);
+}
+
+bool XboxInput::outtake(){
+	return controller.GetRawButton(BUTTON_X);
+}
