@@ -22,7 +22,7 @@ void ShooterSystem::init(Environment* environment){
 	Victor** motors;
 	motors[0] = new Victor(SHOOTER_MOTOR_1);
 	motors[1] = new Victor(SHOOTER_MOTOR_2);
-	pneumatic = new DoubleSolenoid(new Relay(SHOOTER_RELAY_1), new Relay(SHOOTER_RELAY_2));
+	pneumatic = new Solenoid(SHOOTER_RELAY);
 	timer.Start();
 	inputMethod = environment->getInput();
 }
@@ -67,7 +67,7 @@ void ShooterSystem::shoot(InputMethod* input){
 
 	//catch and open after catch
 	if(!catchToggle && input->catchBall()){
-		if(!pneumatic->IsDefaultState()){
+		if(!pneumatic->Get()){
 			setMotor(0);
 			close();
 		}else{
@@ -79,13 +79,11 @@ void ShooterSystem::shoot(InputMethod* input){
 }
 
 void ShooterSystem::open(){
-	if(pneumatic->IsDefaultState())
-		pneumatic->Toggle();
+	pneumatic->Set(true);
 }
 
 void ShooterSystem::close(){
-	if(!pneumatic->IsDefaultState())
-		pneumatic->Toggle();
+	pneumatic->Set(false);
 }
 
 void ShooterSystem::setMotor(double speed){

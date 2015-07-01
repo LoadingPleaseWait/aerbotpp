@@ -4,9 +4,9 @@
 
 #include "RobotSystem.h"
 #include "../custom/MultiMotor.h"
-#include "../custom/DoubleSolenoid.h"
 
 #include <Timer.h>
+#include <Solenoid.h>
 
 class Relay;
 class Victor;
@@ -15,7 +15,7 @@ class InputMethod;
 class ShooterSystem: public RobotSystem {
 private:
 	MultiMotor* motor;
-	DoubleSolenoid* pneumatic;
+	Solenoid* pneumatic;
 	InputMethod* inputMethod;
 	Timer timer;
 	bool isToggled,catchToggle, shooting, shootPressed, manualShooting;
