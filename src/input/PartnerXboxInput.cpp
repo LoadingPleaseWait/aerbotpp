@@ -1,9 +1,3 @@
-/*
- * PartnerXboxInput.cpp
- *
- *  Created on: Apr 9, 2014
- */
-
 #include "PartnerXboxInput.h"
 
 PartnerXboxInput::PartnerXboxInput() :driver(1), shooter(2) {
